@@ -36,7 +36,7 @@
 //= require app/libs/d3/d3.v3.js
 //= require app/libs/rickshaw/rickshaw.min.js
 //= require app/libs/raphael/raphael-min.js
-//= require app/libs/morrischart/morris.min.js
+
 //= require app/libs/jquery-knob/jquery.knob.js
 //= require app/libs/jquery-jvectormap/js/jquery-jvectormap-1.2.2.min.js
 //= require app/libs/jquery-jvectormap/js/jquery-jvectormap-us-aea-en.js
