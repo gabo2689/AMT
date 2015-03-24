@@ -8,6 +8,32 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree ./app
+ *= require app/libs/jqueryui/ui-lightness/jquery-ui-1.10.4.custom.min.css
+ *= require app/libs/bootstrap/css/bootstrap.min.css
+ *= require app/libs/font-awesome/css/font-awesome.min.css
+ *= require app/libs/fontello/css/fontello.css
+ *= require app/libs/animate-css/animate.min.css
+ *= require app/libs/nifty-modal/css/component.css
+ *= require app/libs/magnific-popup/magnific-popup.css
+ *= require app/libs/ios7-switch/ios7-switch.css
+ *= require app/libs/pace/pace.css
+ *= require app/libs/sortable/sortable-theme-bootstrap.css
+ *= require app/libs/bootstrap-datepicker/css/datepicker.css
+ *= require app/libs/jquery-icheck/skins/all.css
+ *= require app/libs/prettify/github.css
+ *= require app/libs/rickshaw/rickshaw.min.css
+ *= require app/libs/morrischart/morris.css
+ *= require app/libs/jquery-jvectormap/css/jquery-jvectormap-1.2.2.css
+ *= require app/libs/jquery-clock/clock.css
+ *= require app/libs/bootstrap-calendar/css/bic_calendar.css
+ *= require app/libs/sortable/sortable-theme-bootstrap.css
+ *= require app/libs/jquery-weather/simpleweather.css
+ *= require app/libs/bootstrap-xeditable/css/bootstrap-editable.css
+ *= require app/style.css
+ *= require app/style-responsive.css
+
+
+
+
+
  */
