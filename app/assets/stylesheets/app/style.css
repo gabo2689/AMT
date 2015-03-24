@@ -5208,7 +5208,7 @@ section.step {
   z-index: 1000;
 }
 #weather-widget {
-  background: url(../../images/weather/weather-bg.jpg);
+  background: url(assets/app/weather/weather-bg.jpg);
   background-size: cover;
   min-height: 364px;
 }

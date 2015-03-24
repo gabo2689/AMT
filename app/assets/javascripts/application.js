@@ -9,7 +9,7 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
 //= require app/libs/jquery/jquery-1.11.1.min.js
 //= require turbolinks
 //= require app/libs/bootstrap/js/bootstrap.min.js
