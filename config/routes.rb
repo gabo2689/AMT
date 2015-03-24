@@ -1,5 +1,6 @@
 AMT::Application.routes.draw do
 
+  get "priorities/index"
   #get "dashboard/index"
 
   #get "home/index"
