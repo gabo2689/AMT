@@ -1,29 +1,16 @@
-.row
-  .col-md-12
-    .widget
-      .widget-header.transparent
-        %h2
-          %strong Sortable
-          Table
-        .additional-btn
-          %a.hidden.reload{:href => "#"}
-            %i.icon-ccw-1
-      .widget-content
-        .table-responsive
-          %table.table{"data-sortable" => "", "data-sortable-initialized" => "true"}
-            %thead
-              %tr
-                %th No
-                %th{"data-sortable" => "false", :style => "width: 30px"}
-                  .icheckbox_square-aero{"aria-checked" => "false", "aria-disabled" => "false", :style => "position: relative;"}
-                    %input.rows-check{:style => "position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); border: 0px; opacity: 0; background-position: initial initial; background-repeat: initial initial;", :type => "checkbox"}
-                      %ins.iCheck-helper{:style => "position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); border: 0px; opacity: 0; background-position: initial initial; background-repeat: initial initial;"}
-                %th Full Name
-                %th Location
-                %th Date of birth
-                %th Email
-                %th{"data-sortable" => "false"} Sort : Off
-                %th Status
-                %th{"data-sortable" => "false"} Option
-            %tbody
-              %tr
+.widget
+  .widget-header.transparent
+    %h2
+      %strong Priority
+      Table
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .data-table-toolbar
+      .row
+        .col-md-1
+          .toolbar-btn-action
+            = link_to " Add new", new_priority_path, class: "a btn btn-success i fa fa-plus-circle"
+    .table-responsive
+      = render partial: "table", locals: {priorities: @priorities}

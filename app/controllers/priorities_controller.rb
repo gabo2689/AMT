@@ -1,16 +1,17 @@
 class PrioritiesController < ApplicationController
   def index
 
-    @priorities = Priority.order(:title)
-
-  end
-
-  def create
+    @priorities = Priority.order(weight: :desc)
 
   end
 
   def new
     @priority = Priority.new
+  end
+
+  def create
+
+
   end
 
   def update
