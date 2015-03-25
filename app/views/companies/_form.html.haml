@@ -1,0 +1,34 @@
+= form_for @companies do |f|
+  
+  .widget
+    .widget-header.transparent
+      %h2
+        %strong Companies
+        Form
+      
+      .form-group
+        .field
+          .label
+            = f.label :name
+          = f.text_field :name, :class => "form-control"
+
+
+      .field
+        .label
+          = f.label :address
+        = f.text_field :address, :class => "form-control"
+
+      .field
+        .label
+          = f.label :city
+        = f.text_field :city, :class => "form-control"
+
+
+      .field
+        .label
+          = f.label :phone
+        = f.text_field :phone, :class => "form-control"
+
+
+      .actions
+        = f.submit 'Save'

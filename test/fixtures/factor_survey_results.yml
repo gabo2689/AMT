@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  factor_id: 
+  survey_result_id: 
+  score: 1
+
+two:
+  factor_id: 
+  survey_result_id: 
+  score: 1
