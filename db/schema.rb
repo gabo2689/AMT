@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324202356) do
+ActiveRecord::Schema.define(version: 20150325210209) do
+
+  create_table "amt_comments", force: true do |t|
+    t.text     "comment"
+    t.integer  "technology_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "amt_comments", ["technology_id"], name: "index_amt_comments_on_technology_id"
+  add_index "amt_comments", ["user_id"], name: "index_amt_comments_on_user_id"
+
+  create_table "amt_types", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -33,6 +50,17 @@ ActiveRecord::Schema.define(version: 20150324202356) do
 
   add_index "dimentions", ["priority_id"], name: "index_dimentions_on_priority_id"
 
+  create_table "factor_survey_results", force: true do |t|
+    t.integer  "factor_id"
+    t.integer  "survey_result_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "factor_survey_results", ["factor_id"], name: "index_factor_survey_results_on_factor_id"
+  add_index "factor_survey_results", ["survey_result_id"], name: "index_factor_survey_results_on_survey_result_id"
+
   create_table "factors", force: true do |t|
     t.string   "title"
     t.integer  "weight"
@@ -49,6 +77,31 @@ ActiveRecord::Schema.define(version: 20150324202356) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "survey_results", force: true do |t|
+    t.integer  "company_id"
+    t.string   "filled_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "survey_results", ["company_id"], name: "index_survey_results_on_company_id"
+
+  create_table "technologies", force: true do |t|
+    t.text     "title"
+    t.text     "description"
+    t.text     "benefits"
+    t.text     "others"
+    t.text     "summary"
+    t.integer  "weight"
+    t.integer  "factor_id"
+    t.integer  "amt_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "technologies", ["amt_type_id"], name: "index_technologies_on_amt_type_id"
+  add_index "technologies", ["factor_id"], name: "index_technologies_on_factor_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

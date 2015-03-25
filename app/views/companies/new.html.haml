@@ -1,2 +1,37 @@
-<h1>Companies#new</h1>
-<p>Find me in app/views/companies/new.html.erb</p>
+.content
+  .page-heading
+  .row
+    .col-sm-6.portlets    
+      .widget
+        .widget-header.transparent
+          %h2
+            %strong Company
+            Form
+          .additional-btn
+            %a.hidden.reload{:href => "#"}
+              %i.icon-ccw-1
+            %a.widget-toggle{:href => "#"}
+              %i.icon-down-open-2
+            %a.widget-close{:href => "#"}
+              %i.icon-cancel-3
+        .widget-content.padding
+        
+
+          = form_for @companies  do |c|
+            .form-group
+              %label Name
+              = c.text_field :name, :class => "form-control"
+            .form-group
+              %label Address
+              = c.text_field :address, :class => "form-control"
+            .form-group
+              %label City
+              = c.text_field :city, :class => "form-control"
+            
+            .form-group
+              %label Phone
+              = c.text_field :phone, :class => "form-control"
+            
+            .form-group
+              = c.submit 'Create', :class => "btn.btn-primary"
+          

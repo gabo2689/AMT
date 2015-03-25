@@ -1,2 +1,32 @@
-<h1>Companies#edit</h1>
-<p>Find me in app/views/companies/edit.html.erb</p>
+%h1 Editing Company
+
+= form_for @companies do |f|
+  - if @companies.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@companies.errors.count, "error")} prohibited this companies from being saved:"
+      %ul
+        - @companies.errors.full_messages.each do |msg|
+          %li= msg
+  %br
+  .field
+      = f.label :name
+    = f.text_field :name
+
+
+  .field
+      = f.label :address
+    = f.text_field :address
+
+  .field
+      = f.label :city
+    = f.text_field :city
+
+  .field
+      = f.label :phone
+    = f.text_field :phone
+
+
+  .actions
+    = f.submit 'Save'
+
+= link_to 'Back', companies_path
