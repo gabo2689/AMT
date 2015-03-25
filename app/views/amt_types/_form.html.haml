@@ -1,0 +1,17 @@
+= form_for @amt_types do |f|
+  
+  .widget
+    .widget-header.transparent
+      %h2
+        %strong AMT Type
+        Form
+      
+      .form-group
+        .field
+          .label
+            = f.label :title
+          = f.text_field :title, :class => "form-control"
+
+
+      .actions
+        = f.submit 'Save'
