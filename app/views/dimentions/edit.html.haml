@@ -1,0 +1,33 @@
+.content
+  .page-heading
+  .row
+    .col-sm-6.portlets
+      .widget
+        .widget-header.transparent
+          %h2
+            %strong Dimention
+            Form
+          .additional-btn
+            %a.hidden.reload{:href => "#"}
+              %i.icon-ccw-1
+            %a.widget-toggle{:href => "#"}
+              %i.icon-down-open-2
+            %a.widget-close{:href => "#"}
+              %i.icon-cancel-3
+        .widget-content.padding
+          = render partial: "shared/print_errors", locals: {obj: @dimention}
+          = form_for @dimention do |f|
+            .form-group
+              %label Priority
+              = f.collection_select :priority_id, Priority.order(:title), :id, :title, {}, :class => "form-control"
+            .form-group
+              %label Title
+              = f.text_field :title, :class => "form-control"
+            .form-group
+              %label Weight
+              = f.number_field :weight, :class => "form-control"
+            .form-group
+              = f.submit class: "button btn btn-primary"
+              = link_to " Cancel", dimentions_path, class: "btn btn-primary", :style => "height: 34px;padding-top: 6px;"
+              - if @dimention.factors.count==0
+                = link_to " Delete Dimention", priority_path(@dimention), method: :delete, data: { confirm: "Are you Sure?" }, class: "btn btn-danger i fa fa-trash-o", :style => "height: 34px;padding-top: 8px;"

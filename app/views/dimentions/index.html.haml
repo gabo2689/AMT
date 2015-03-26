@@ -1,0 +1,20 @@
+.widget
+  .widget-header.transparent
+    %h2
+      %strong Dimention
+      Table
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .data-table-toolbar
+      .row
+        .col-md-4
+          .toolbar-btn-action
+            - if @dimentions.any?
+              = render partial: "shared/filter_form", locals: {form_path: dimentions_path}
+        .col-md-1
+          .toolbar-btn-action
+            = link_to " Add new", new_dimention_path, class: "a btn btn-success i fa fa-plus-circle"
+    .table-responsive
+      = render partial: "table", locals: {dimentions: @dimentions}

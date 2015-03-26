@@ -41,6 +41,22 @@
 
 
 $(document).on("ready page:load", function(){
+
+
+	$(".js_filter_form").on("ajax:success", function(e, data, status, xhr){
+    $(".table-responsive").html(data)
+  });
+
+  $(".js_filter_form").on("ajax:error", function(e, xhr, status, error){
+    alert(error);
+  });
+
+  $("#keyword").on("keyup", function(e){
+    $(".js_filter_form").submit();
+  });
+
+
+
 	FastClick.attach(document.body);
 	//resizefunc.push("initscrolls");
 //	resizefunc.push("changeptype");

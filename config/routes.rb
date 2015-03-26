@@ -13,6 +13,8 @@ AMT::Application.routes.draw do
     resources :dimentions
   end
 
+  resources :dimentions
+
 
   resources :companies, except: [:show,:destroy]
 
