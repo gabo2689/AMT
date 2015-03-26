@@ -12,6 +12,8 @@
 
 //= require app/libs/jquery/jquery-1.11.1.min.js
 //= require turbolinks
+//= require highcharts
+//= require highcharts/highcharts-more
 //= require app/libs/bootstrap/js/bootstrap.min.js
 //= require app/libs/jqueryui/jquery-ui-1.10.4.custom.min.js
 //= require app/libs/jquery-ui-touch/jquery.ui.touch-punch.min.js
@@ -33,28 +35,75 @@
 //= require app/libs/jquery-icheck/icheck.min.js
 //= require app/libs/prettify/prettify.js
 //= require app/init.js
-
 //= require app/apps/calculator.js
 //= require app/apps/todo.js
 //= require app/apps/notes.js
-//= require app/pages/index.js
+
+
 
 
 $(document).on("ready page:load", function(){
 
 
-	$(".js_filter_form").on("ajax:success", function(e, data, status, xhr){
-    $(".table-responsive").html(data)
-  });
 
-  $(".js_filter_form").on("ajax:error", function(e, xhr, status, error){
-    alert(error);
-  });
 
-  $("#keyword").on("keyup", function(e){
-    $(".js_filter_form").submit();
-  });
 
+//	if( $("#graph_container").length > 0 ){
+    // graphData = $("#graph_container").data("graph-data");
+
+		$('#graph_container').highcharts({
+
+	        chart: {
+	            polar: true,
+	            type: 'line'
+	        },
+
+	        title: {
+	            text: 'Budget vs spending',
+	            x: -80
+	        },
+
+	        pane: {
+	            size: '80%'
+	        },
+
+	        xAxis: {
+	            categories: ['Sales', 'Marketing', 'Development', 'Customer Support',
+	                    'Information Technology', 'Administration'],
+	            tickmarkPlacement: 'on',
+	            lineWidth: 0
+	        },
+
+	        yAxis: {
+	            gridLineInterpolation: 'polygon',
+	            lineWidth: 0,
+	            min: 0
+	        },
+
+	        tooltip: {
+	            shared: true,
+	            pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+	        },
+
+	        legend: {
+	            align: 'right',
+	            verticalAlign: 'top',
+	            y: 70,
+	            layout: 'vertical'
+	        },
+
+	        series: [{
+	            name: 'Allocated Budget',
+	            data: [43000, 19000, 60000, 35000, 17000, 10000],
+	            pointPlacement: 'on'
+	        }, {
+	            name: 'Actual Spending',
+	            data: [50000, 39000, 42000, 31000, 26000, 14000],
+	            pointPlacement: 'on'
+	        }]
+
+	    });
+//}
 
 
 	FastClick.attach(document.body);

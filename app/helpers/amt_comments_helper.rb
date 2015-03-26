@@ -1,0 +1,2 @@
+module AmtCommentsHelper
+end

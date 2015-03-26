@@ -6,8 +6,8 @@ class FactorsController < ApplicationController
 
     if params[:keyword].present?
       q = params[:keyword]
-      @factors = @factors.joins(:priority,:dimention)
-        .where("priorities.title LIKE '%#{q}%' OR dimentions.title LIKE '%#{q}%' OR factor.title LIKE '%#{q}%'")
+      @factors = @factors.joins(:dimention)
+        .where("dimentions.title LIKE '%#{q}%' OR factors.title LIKE '%#{q}%'")
     end
 
     if request.xhr?
