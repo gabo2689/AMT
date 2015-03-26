@@ -12,6 +12,7 @@
 
 //= require app/libs/jquery/jquery-1.11.1.min.js
 //= require turbolinks
+//= require highcharts
 //= require app/libs/bootstrap/js/bootstrap.min.js
 //= require app/libs/jqueryui/jquery-ui-1.10.4.custom.min.js
 //= require app/libs/jquery-ui-touch/jquery.ui.touch-punch.min.js
@@ -33,11 +34,11 @@
 //= require app/libs/jquery-icheck/icheck.min.js
 //= require app/libs/prettify/prettify.js
 //= require app/init.js
-
 //= require app/apps/calculator.js
 //= require app/apps/todo.js
 //= require app/apps/notes.js
 //= require app/pages/index.js
+
 
 
 $(document).on("ready page:load", function(){
@@ -55,6 +56,54 @@ $(document).on("ready page:load", function(){
     $(".js_filter_form").submit();
   });
 
+
+//	if( $("#graph_container").length > 0 ){
+    // graphData = $("#graph_container").data("graph-data");
+
+		$('#graph_container').highcharts({
+			chart: {
+					plotBackgroundColor: null,
+					plotBorderWidth: null,
+					plotShadow: false
+			},
+			title: {
+					text: 'Browser market shares at a specific website, 2014'
+			},
+			tooltip: {
+					pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+			plotOptions: {
+					pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+									enabled: true,
+									format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+									style: {
+											color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+									}
+							}
+					}
+			},
+			series: [{
+					type: 'pie',
+					name: 'Browser share',
+					data: [
+							['Firefox',   45.0],
+							['IE',       26.8],
+							{
+									name: 'Chrome',
+									y: 12.8,
+									sliced: true,
+									selected: true
+							},
+							['Safari',    8.5],
+							['Opera',     6.2],
+							['Others',   0.7]
+					]
+			}]
+	});
+//}
 
 
 	FastClick.attach(document.body);
