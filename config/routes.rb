@@ -1,5 +1,6 @@
 AMT::Application.routes.draw do
 
+  get "amt_comments/index"
   get "priorities/index"
   #get "dashboard/index"
 
@@ -18,9 +19,16 @@ AMT::Application.routes.draw do
 
   resources :companies, except: [:show,:destroy]
 
-  resources :amt_types do
-    resources :technologies
-  end
+  resources :amt_types do 
+    resources :technologies, except: [:index]
+  end 
+
+  resources :technologies, only: [:index]
+
+
+
+   resources :amt_comments 
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

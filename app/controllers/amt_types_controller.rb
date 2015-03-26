@@ -33,6 +33,10 @@ class AmtTypesController < ApplicationController
     end
   end
 
+  def show
+    @amt_types = AmtType.find(params[:id])
+  end
+
   private
 
     def amt_types_params

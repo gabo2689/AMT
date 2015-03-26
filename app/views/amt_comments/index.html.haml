@@ -3,7 +3,7 @@
     .widget
       .widget-header.transparent
         %h2
-          %strong Company
+          %strong AMT Comments
            
         .additional-btn
           %a.hidden.reload{:href => "#"}
@@ -17,19 +17,13 @@
           .row
             .col-md-1
               .toolbar-btn-action
-                = link_to ' Add New', new_company_path ,class: "a btn btn-success i fa fa-plus-circle "
+                = link_to ' Add New', new_amt_comment_path ,class: "a btn btn-success i fa fa-plus-circle "
      
         .table-responsive
           %table.table.table-hover.table-striped{"data-sortable" => ""}
             %thead
               %tr
-                %th Name
-                %th Address
-                %th City
-                %th Phone
+                %th Comments
                 %th Edit
-               
             %tbody
-              = render @companies
-              
-                
+              = render @amt_comments

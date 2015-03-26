@@ -14,7 +14,6 @@ class FactorsController < ApplicationController
       render partial: "table", locals: {factors: @factors}
     end
 
-
   end
 
   def new
