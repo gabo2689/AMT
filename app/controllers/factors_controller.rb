@@ -2,7 +2,7 @@ class FactorsController < ApplicationController
 
   def index
 
-    @factors = Factor.includes(:priority,:dimention).order(dimention_id: :asc ,weight: :desc)
+    @factors = Factor.includes(:dimention).order(dimention_id: :asc ,weight: :desc)
 
     if params[:keyword].present?
       q = params[:keyword]
@@ -40,7 +40,7 @@ class FactorsController < ApplicationController
   def update
     @factor = Factor.find(params[:id])
 
-      if @Factor.update(factors_params)
+      if @factor.update(factors_params)
         redirect_to factors_path,
           flash: {notice: "Factor successfully edited"}
       else

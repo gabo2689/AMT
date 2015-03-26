@@ -19,7 +19,7 @@
           = form_for @factor do |f|
             .form-group
               %label Priority
-              = f.collection_select :priority_id, Priority.order(:title), :id, :title, {}, :class => "form-control"
+              = f.grouped_collection_select :dimention_id, Priority.all, :dimentions, :title, :id, :title, :class => "form-control"
             .form-group
               %label Title
               = f.text_field :title, :class => "form-control"
@@ -28,6 +28,6 @@
               = f.number_field :weight, :class => "form-control"
             .form-group
               = f.submit class: "button btn btn-primary"
-              = link_to " Cancel", dimentions_path, class: "btn btn-primary", :style => "height: 34px;padding-top: 6px;"
-              - if @factor.dimentions.count==0
+              = link_to " Cancel", factors_path, class: "btn btn-primary", :style => "height: 34px;padding-top: 6px;"
+              - if @factor.technologies.count==0
                 = link_to " Delete Dimention", factor_path(@factor), method: :delete, data: { confirm: "Are you Sure?" }, class: "btn btn-danger i fa fa-trash-o", :style => "height: 34px;padding-top: 8px;"
