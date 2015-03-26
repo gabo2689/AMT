@@ -1,0 +1,51 @@
+.widget
+  .widget-header.transparent
+    %h2
+      %strong AMT Type Selected
+      Table
+
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .data-table-toolbar
+      .row
+        .col-md-1
+          .toolbar-btn-action
+            = link_to " Back", amt_types_path, class: "btn btn-primary", :style => "height: 34px;padding-top: 6px;"
+    .table-responsive
+      %thead
+        %tr
+          %th Title
+          %th Check AMT&M 
+          %th Edit
+      %tbody
+        = render @amt_types
+
+
+  .widget-header.transparent
+    %h2
+      %strong Technologies for Priority Selected
+      Table
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .table-responsive
+      = form_for @amt_types do |f|
+        %table{"data-sortable" => "", "data-sortable-initialized" => "true"}
+          %tr
+            %th Title
+            %th Description
+            %th Others
+            %th Summary
+            %th Weight
+
+          = f.fields_for :technologies do |order|
+            %tr
+              %td= order.text_field :title, readonly: true
+              %td= order.text_field :description, readonly: true
+              %td= order.text_field :others, readonly: true
+              %td= order.text_field :summary, readonly: true
+              %td= order.text_field :weight, readonly: true
+            

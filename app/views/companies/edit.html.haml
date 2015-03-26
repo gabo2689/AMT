@@ -1,32 +1,37 @@
-%h1 Editing Company
-
-= form_for @companies do |f|
-  - if @companies.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@companies.errors.count, "error")} prohibited this companies from being saved:"
-      %ul
-        - @companies.errors.full_messages.each do |msg|
-          %li= msg
-  %br
-  .field
-      = f.label :name
-    = f.text_field :name
-
-
-  .field
-      = f.label :address
-    = f.text_field :address
-
-  .field
-      = f.label :city
-    = f.text_field :city
-
-  .field
-      = f.label :phone
-    = f.text_field :phone
-
-
-  .actions
-    = f.submit 'Save'
-
-= link_to 'Back', companies_path
+.content
+  .page-heading
+  .row
+    .col-sm-6.portlets    
+      .widget
+        .widget-header.transparent
+          %h2
+            %strong Company
+            Form
+          .additional-btn
+            %a.hidden.reload{:href => "#"}
+              %i.icon-ccw-1
+            %a.widget-toggle{:href => "#"}
+              %i.icon-down-open-2
+            %a.widget-close{:href => "#"}
+              %i.icon-cancel-3
+        .widget-content.padding
+        
+          = render partial: "shared/print_errors", locals: {obj: @companies}
+          = form_for @companies  do |c|
+            .form-group
+              %label Name
+              = c.text_field :name, :class => "form-control"
+            .form-group
+              %label Address
+              = c.text_field :address, :class => "form-control"
+            .form-group
+              %label City
+              = c.text_field :city, :class => "form-control"
+            
+            .form-group
+              %label Phone
+              = c.text_field :phone, :class => "form-control"
+            
+            .form-group
+              = c.submit 'Update Company', :class => "btn btn-primary"
+          
