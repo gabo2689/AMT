@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$.fn.editable.defaults.mode = 'inline';
+	//$.fn.editable.defaults.mode = 'inline';
 	$(".todo-list").sortable({
 		cancel: ".done",
 		axis: "y",
@@ -32,16 +32,16 @@ $(document).ready(function(){
 						'</span>'+
 					'</li>';
 		$(".todo-list").append($item);
-		
+
 		$('input').iCheck({
 		  checkboxClass: 'icheckbox_square-aero',
 		  radioClass: 'iradio_square-aero',
 		  increaseArea: '20%'
 		});
 
-		$('.todo-list .todo-item').editable({
-		    type: 'text'
-	    });
+		// $('.todo-list .todo-item').editable({
+		//     type: 'text'
+	  //   });
 	    window.setTimeout(function () {
 		   	$(".todo-list li").removeClass("animated");
 		}, 500);
@@ -74,7 +74,7 @@ $(document).ready(function(){
         $contextMenu.hide();
     });
 
-	$('.todo-list .todo-item').editable({
-	    type: 'text'
-    });
+	// $('.todo-list .todo-item').editable({
+	//     type: 'text'
+  //   });
 });
