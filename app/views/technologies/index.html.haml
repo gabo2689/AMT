@@ -1,0 +1,24 @@
+.widget
+  .widget-header.transparent
+    %h2
+      %strong Technology
+      Table
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .data-table-toolbar
+      .row
+        .col-md-4
+          .toolbar-btn-action
+            = render partial: "shared/filter_form", locals: {form_path: technologies_path}
+
+    .table-responsive
+      = render partial: "table", locals: {factors: @technology}
+          
+
+
+
+
+
+

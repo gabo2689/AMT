@@ -19,8 +19,9 @@ AMT::Application.routes.draw do
   resources :companies, except: [:show,:destroy]
 
   resources :amt_types do 
-    resources :technologies
+    resources :technologies, except: [:index]
   end 
+  resources :technologies, only: [:index]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

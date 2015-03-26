@@ -13,7 +13,8 @@
         .col-md-1
           .toolbar-btn-action
             = link_to " Back", amt_types_path, class: "btn btn-primary", :style => "height: 34px;padding-top: 6px;"
-    .table-responsive
+  .table-responsive
+    %table.table{"data-sortable" => "", "data-sortable-initialized" => "true"}
       %thead
         %tr
           %th Title
