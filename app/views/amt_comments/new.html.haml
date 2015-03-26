@@ -1,0 +1,26 @@
+.content
+  .page-heading
+  .row
+    .col-sm-6.portlets    
+      .widget
+        .widget-header.transparent
+          %h2
+            %strong AMT Comment
+            Form
+          .additional-btn
+            %a.hidden.reload{:href => "#"}
+              %i.icon-ccw-1
+            %a.widget-toggle{:href => "#"}
+              %i.icon-down-open-2
+            %a.widget-close{:href => "#"}
+              %i.icon-cancel-3
+        .widget-content.padding
+        
+
+          = form_for @amt_comments  do |a|
+            .form-group
+              %label Comment
+              = a.text_field :comment, :class => "form-control"
+            
+            .form-group
+              = a.submit class: "button btn btn-primary"
