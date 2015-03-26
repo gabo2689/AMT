@@ -1,0 +1,10 @@
+= render partial: "shared/print_errors", locals: {obj: @priority}
+= form_for @priority do |f|
+  .form-group
+    %label Title
+    = f.text_field :title, :class => "form-control"
+  .form-group
+    %label Weight
+    = f.number_field :weight, :class => "form-control"
+  .form-group
+    = f.submit class: "button btn btn-primary"

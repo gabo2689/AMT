@@ -64,7 +64,7 @@
 <div class="topbar">
    <div class="topbar-left">
        <div class="logo">
-           <h1><a href="#"><img src="assets/app/logo.png" alt="Logo"></a></h1>
+           <h1><a href="#"><%= image_tag "app/logo.png" %></a></h1>
        </div>
        <button class="button-menu-mobile open-left">
        <i class="fa fa-bars"></i>
@@ -77,7 +77,7 @@
 
                <ul class="nav navbar-nav navbar-right top-navbar">
                    <li class="dropdown topbar-profile">
-                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><img src="assets/app/users/user-35.jpg"></span> Jane <strong>Doe</strong> <i class="fa fa-caret-down"></i></a>
+                       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><%= image_tag "app/users/user-35.jpg" %></span> Jane <strong>Doe</strong> <i class="fa fa-caret-down"></i></a>
                        <ul class="dropdown-menu">
                            <li><a href="#">My Profile</a></li>
                            <li><a href="#">Change Password</a></li>
@@ -183,7 +183,7 @@
                               </li>
                             </ul>
                           </li>
-                          
+
                </div>
            <div class="clearfix"></div>
 
@@ -303,12 +303,7 @@
              <div id="chat-coll" class="panel-collapse collapse in">
                <div class="panel-body">
                  <ul class="list-unstyled" id="chat-list">
-                   <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="assets/app/users/chat/1.jpg"></span> <span class="chat-user-name">Dorothy Simons</span><span class="chat-user-msg">I wish I was a bird in the sky</span></a></li>
-                   <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="assets/app//users/chat/2.jpg"></span> <span class="chat-user-name">John Malkovich</span><span class="chat-user-msg">You were the traitor</span></a></li>
-                   <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="assets/app/users/chat/3.jpg"></span> <span class="chat-user-name">Jessica Simons</span><span class="chat-user-msg">Where is my mind</span></a></li>
-                   <li><a href="javascript:;" class="away"><span class="chat-user-avatar"><img src="assets/app/users/chat/4.jpg"></span> <span class="chat-user-name">Jack Stallman</span><span class="chat-user-msg">Away since 13:32</span></a></li>
-                   <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="assets/app/users/chat/5.jpg"></span> <span class="chat-user-name">Neil Armstrong</span><span class="chat-user-msg" title="I am flying to the moon and back">I am flying to the moon and back</span></a></li>
-                   <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="assets/app/users/chat/6.jpg"></span> <span class="chat-user-name">Hollywood Studios</span><span class="chat-user-msg">Yes he definitely is!</span></a></li>
+
                  </ul>
                </div>
              </div>
@@ -325,12 +320,7 @@
              <div id="collapseTwo" class="panel-collapse collapse in">
                <div class="panel-body">
                  <ul class="list-unstyled" id="chat-list">
-                   <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="assets/app/users/chat/1.jpg"></span> <span class="chat-user-name">Dorothy Simons</span><span class="chat-user-msg">I wish I was a bird in the sky</span></a></li>
-                   <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="assets/app/users/chat/2.jpg"></span> <span class="chat-user-name">John Malkovich</span><span class="chat-user-msg">You were the traitor</span></a></li>
-                   <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="assets/app/users/chat/3.jpg"></span> <span class="chat-user-name">Jessica Simons</span><span class="chat-user-msg" title="Eminem - The Monster ft. Rihanna"><i class="icon-play"></i> Eminem - The Monster ft. Rihanna</span></a></li>
-                   <li><a href="javascript:;" class="away"><span class="chat-user-avatar"><img src="assets/app/users/chat/4.jpg"></span> <span class="chat-user-name">Jack Stallman</span><span class="chat-user-msg">Away since 13:32</span></a></li>
-                   <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="assets/app/users/chat/5.jpg"></span> <span class="chat-user-name">Neil Armstrong</span><span class="chat-user-msg" title="I am flying to the moon and back">I am flying to the moon and back</span></a></li>
-                   <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="assets/app/users/chat/6.jpg"></span> <span class="chat-user-name">Hollywood Studios</span><span class="chat-user-msg">Yes he definitely is!</span></a></li>
+                  
                  </ul>
                </div>
              </div>
@@ -501,21 +491,21 @@
 
 
                    <!-- Footer Start -->
-           <footer>
-               Huban Creative &copy; 2014
-               <div class="footer-links pull-right">
-                 <a href="#">About</a><a href="#">Support</a><a href="#">Terms of Service</a><a href="#">Legal</a><a href="#">Help</a><a href="#">Contact Us</a>
-               </div>
-           </footer>
-           <!-- Footer End -->
-           </div>
+
      <!-- ============================================================== -->
      <!-- End content here -->
      <!-- ============================================================== -->
 
        </div>
    <!-- End right content -->
-
+   <footer>
+       Huban Creative &copy; 2014
+       <div class="footer-links pull-right">
+         <a href="#">About</a><a href="#">Support</a><a href="#">Terms of Service</a><a href="#">Legal</a><a href="#">Help</a><a href="#">Contact Us</a>
+       </div>
+   </footer>
+   <!-- Footer End -->
+   </div>
  </div>
  <div id="contextMenu" class="dropdown clearfix">
        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display:block;position:static;margin-bottom:5px;">

@@ -1,0 +1,37 @@
+.widget
+  .widget-header.transparent
+    %h2
+      %strong Priority Selected
+      Table
+
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .data-table-toolbar
+      .row
+        .col-md-1
+          .toolbar-btn-action
+            = link_to " Back", priorities_path, class: "btn btn-primary", :style => "height: 34px;padding-top: 6px;"
+    .table-responsive
+      = render partial: "table", locals: {priorities: @priority}
+
+
+  .widget-header.transparent
+    %h2
+      %strong Dimentions Selected
+      Table
+    .additional-btn
+      %a.hidden.reload{:href => "#"}
+        %i.icon-ccw-1
+  .widget-content
+    .table-responsive
+      = form_for @priority do |f|
+        %table{"data-sortable" => "", "data-sortable-initialized" => "true"}
+          %tr
+            %th Title
+            %th Weight
+          = f.fields_for :dimentions do |order|
+            %tr
+              %td= order.text_field :title, readonly: true
+              %td= order.text_field :weight, readonly: true
