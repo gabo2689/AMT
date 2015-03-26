@@ -11,7 +11,7 @@ class AmtCommentsController < ApplicationController
     @amt_comments = AmtComment.new(amt_comments_params)
 
     if @amt_comments.save
-      redirect_to amt_types_path, 
+      redirect_to amt_comments_path, 
         flash: {notice: "AmtComment successfully added"}
     else
       render :new
