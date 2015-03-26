@@ -48,8 +48,9 @@ $(document).on("ready page:load", function(){
 
 
 
-//	if( $("#graph_container").length > 0 ){
-    // graphData = $("#graph_container").data("graph-data");
+	//if( $("#graph_container").length > 0 ){
+     graphData = $("#graph_container").data("graph-data");
+		 graphCategories = $("#container").data("graph-category");
 
 		$('#graph_container').highcharts({
 
@@ -59,7 +60,7 @@ $(document).on("ready page:load", function(){
 	        },
 
 	        title: {
-	            text: 'Budget vs spending',
+	            text: 'Priority',
 	            x: -80
 	        },
 
@@ -68,8 +69,7 @@ $(document).on("ready page:load", function(){
 	        },
 
 	        xAxis: {
-	            categories: ['Sales', 'Marketing', 'Development', 'Customer Support',
-	                    'Information Technology', 'Administration'],
+	            categories: graphCategories,
 	            tickmarkPlacement: 'on',
 	            lineWidth: 0
 	        },
