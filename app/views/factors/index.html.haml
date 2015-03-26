@@ -1,7 +1,7 @@
 .widget
   .widget-header.transparent
     %h2
-      %strong Dimention
+      %strong Factor
       Table
     .additional-btn
       %a.hidden.reload{:href => "#"}
@@ -11,9 +11,9 @@
       .row
         .col-md-4
           .toolbar-btn-action
-            = render partial: "shared/filter_form", locals: {form_path: dimentions_path}
+            = render partial: "shared/filter_form", locals: {form_path: factors_path}
         .col-md-1
           .toolbar-btn-action
-            = link_to " Add new", new_dimention_path, class: "a btn btn-success i fa fa-plus-circle"
+            = link_to " Add new", new_factor_path, class: "a btn btn-success i fa fa-plus-circle"
     .table-responsive
-      = render partial: "table", locals: {dimentions: @dimentions}
+      = render partial: "table", locals: {factors: @factors}

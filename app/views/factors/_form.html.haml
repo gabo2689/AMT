@@ -1,0 +1,14 @@
+= render partial: "shared/print_errors", locals: {obj: @factor}
+= form_for @factor do |f|
+  .form-group
+    %label Priority
+    = f.grouped_collection_select :factor, :dimention_id, Priority.order(:title), :dimentions, :title, :id, :title , :class => "form-control"
+    -# = f.collection_select :priority_id, Priority.order(:title), :id, :title, {}, :class => "form-control"
+  .form-group
+    %label Title
+    = f.text_field :title, :class => "form-control"
+  .form-group
+    %label Weight
+    = f.number_field :weight, :class => "form-control"
+  .form-group
+    = f.submit class: "button btn btn-primary"
